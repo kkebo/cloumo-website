@@ -1,109 +1,117 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ja">
-	<head>
-		<meta charset=UTF-8 />
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<title>Cumo OS - Home</title>
-		<link rel="stylesheet" type="text/css" href="basic.css"/>
-		<link rel="shortcut icon" href="images/favicon.ico" type="image/vnd.microsoft.icon" />
-		<link rel="icon" href="images/favicon.ico" type="image/vnd.microsoft.icon" />
-	</head>
-	<body>
-
-
-		<div id="nav">
-			<img src="images/banner.gif" alt="banner" />
-
-			<p class="active"><a href="index.html">ホーム</a></p>
-			<p><a href="about.html">Cumo OSについて</a></p>
-			<p><a href="screenshot.html">スクリーンショット</a></p>
-			<p><a href="download.html">ダウンロード</a></p>
-			<p><a href="http://tree.atbbs.jp/cumo/">掲示板</a></p>
+<head>
+	<meta charset=UTF-8 />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Cloumo - Home</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<link rel="shortcut icon" href="images/favicon.ico" type="image/vnd.microsoft.icon" />
+	<link rel="icon" href="images/favicon.ico" type="image/vnd.microsoft.icon" />
+</head>
+<body>
+	<div class="wrap background">
+		<div id="search">
+			<form action="http://www.google.com/cse" id="cse-search-box">
+				<fieldset>
+					<input type="hidden" name="cx" value="007268166758068300627:-f17tli5d3i" />
+					<input type="hidden" name="ie" value="UTF-8" />
+					<input type="text" placeholder="サイト内検索" />
+					<input type="submit" name="sa" class="button" value="" />
+				</fieldset>
+			</form>
 		</div>
-
-
-		<div id="header">
-			<img src="images/home.gif" alt="Home" />
+		<ul id="menu">
+			<li><a class="current" href="index.html">ホーム</a></li>
+			<li><a href="screenshot.html">スクリーンショット</a></li>
+			<li><a href="download.html">ダウンロード</a></li>
+			<li><a href="http://tree.atbbs.jp/cumo/">掲示板</a></li>
+		</ul>
+				
+		<div id="logo">
+			<img src="images/logo2.png" alt="Cloumo" />
+			<h2 id="slogan">オープンソースの次世代ネットOS</h2>
+			<p><a href="download.html"><img src="images/download.png" alt ="ダウンロード" /></a></p>
 		</div>
-
-
-		<div id="article">
-			<section>
-				<h1>ようこそ</h1>
-				<p>
-					ようこそ、オープンソースOS「Cumo OS」の公式サイトへ。<br />
-					このサイトはFirefox 3.6・3.7、Opera 10.5、Chrome 5、IE8・9(Platform Preview)で動作確認済みです。
-				</p>
-				<br />
-			</section>
-			<section>
-				<h1>お知らせ</h1>
+		
+		<div id="feature">
+			<img src="images/ss.png" alt="スクリーンショット" />
+			<h2>目標</h2>
+			<h3>高速・軽量</h3>
+			<p>プログラムの無駄な部分をなくし、<strong>より小さくて高速なOS</strong>を目指しています。</p>
+			<h3>インターネット</h3>
+			<p>ウェブアプリケーションを高速に動作させ、<strong>安全で快適なインターネット利用</strong>を目指しています。</p>
+			<h3>人に優しい</h3>
+			<p><strong>パソコンを使うには知識が必要</strong>という常識をなくし、<strong>誰でも使えるもの</strong>にすることを目指しています。</p>
+		</div>
+		
+		<div class="clear"></div>
+		
+		<div id="left">
+			<h2><a>現在の開発状況</a></h2>
+			
+			<p class="date"><span>2nd</span><br />May</p>
+			<p class="subtitle">小停滞中</p>
+			<p>だんだんと開発スピードが遅くなってきました。そろそろネットワーク対応をやっていこうかと思っています。</p>
+			
+			<p class="date"><span>1st</span><br />May</p>
+			<p class="subtitle">現在順調に進んでいます。</p>
+			<p>現在、デザイン・UIを調節しています。ネットワーク対応はまだ進みそうにありません。</p>
+		</div>
+		
+		<div id="side">
+				<div class="boxtop"></div>
+				<div class="box">
+					<h3>更新履歴</h3>
+					<span class="item">
+						<span class="sidedate">5/14<br /><span>2010</span></span>
+						<strong>スクリーンショット追加</strong><br />ver0.1.3のスクリーンショットをスクリーンショットページに追加しました。
+					</span>
+					<span class="item">
+						<span class="sidedate">5/3<br /><span>2010</span></span>
+						<strong>サイト内検索が可能に</strong><br />Google検索に全ページが登録されたのでサイト内検索が使えるようになりました。
+					</span>
+					<span class="item">
+						<span class="sidedate">5/2<br /><span>2010</span></span>
+						<strong>ver0.1.2 ソース公開</strong><br />Cloumo ver0.1.2のソースを公開しました。
+					</span>
+					<span class="item last">
+						<span class="sidedate">5/1<br /><span>2010</span></span>
+						<strong>リニューアル</strong><br />OSの名称変更に伴いサイトをリニューアルしました。
+					</span>
+				</div>
+				<div class="boxbottom"></div>
+		</div>
+		<p id="ad"><span style="font-weight:bolder;">Cloumoについて</span><br />今、コンピュータ界は大きな転換期を迎えようとしています。これからの時代は、様々なデバイスで利用できるウェブアプリケーションがデスクトプアプリケーションに代わって主流になっていくでしょう。しかし、今OSシェアの多くを占めているWindowsはもともとデスクトップアプリケーションを動かすためのOSなため、Windows上ではウェブアプリケーションは十分な性能を発揮できません。さらに、Windowsは複雑になりすぎて、ただ使用するためだけに知識を必要とします。もしWindowsが誰でも簡単に使えるものだったら、「自分はパソコンが苦手だから」という人もあまりいなかったのではないでしょうか。そこで、ウェブアプリケーションの性能を最大限に引き出し、知識がなくても使えるパソコンを実現するためにCloumoは作られました。</p>
+	</div>
+	
+	<div id="promo">
+		<div class="wrap">	
+			<div class="col">
+				<img id="featured" src="images/logo.png" alt="Cloumo" />
+			</div>
+			<div class="col">
+				<h3>サイトマップ</h3>
 				<ul>
-					<li>ver0.1.1のソースを公開 <time>2010-04-12</time></li>
-					<li>スクリーンショット更新 <time>2010-04-12</time></li>
-					<li>ver0.1.0のソースを公開 <time>2010-04-07</time></li>
-					<li>ver0.0.1の公開を停止 <time>2010-04-07</time></li>
+					<li><a href="index.html">ホーム</a></li>
+					<li><a href="screenshot.html">スクリーンショット</a></li>
+					<li><a href="download.html">ダウンロード</a></li>
 				</ul>
-			</section>
+			</div>
+			<div class="col last">
+				<ul>
+					<li><a href="http://tree.atbbs.jp/cumo/">掲示板</a></li>
+				</ul>
+			</div>
+			<div id="footer">
+				<a href="http://qa-dev.w3.org/wmvs/HEAD/check?uri=http://cloumo.ktkr.net/">
+					<img style="width:88px;" src="images/valid-html5.png" alt="正当なHTMLです!" />
+				</a>
+				<a href="http://jigsaw.w3.org/css-validator/validator?uri=http://cloumo.ktkr.net/css/style.css&amp;profile=css3">
+					<img style="width:88px;" src="images/vcss-blue.gif" alt="正当なCSSです!" />
+				</a>
+				<p>Copyright (C) 2010 Cloumo Project. All Rights Reserved. &minus; Design: Luka Cvrk, <a title="Awsome Web Templates" href="http://www.solucija.com/">Solucija</a></p>
+			</div>
 		</div>
-
-
-		<div id="footer">
-			<!--[if lt IE 7]>
-				<div style='border: 1px solid #F7941D; background: #FEEFDA; text-align: center; clear: both; height: 75px; position: relative;'>
-					<div style='position: absolute; right: 3px; top: 3px; font-family: courier new; font-weight: bold;'>
-						<a href='#' onclick='javascript:this.parentNode.parentNode.style.display='none'; return false;'>
-							<img src='http://www.ie6nomore.com/files/theme/ie6nomore-cornerx.jpg' style='border: none;' alt='Close this notice'/>
-						</a>
-					</div>
-					<div style='width: 640px; margin: 0 auto; text-align: left; padding: 0; overflow: hidden; color: black;'>
-						<div style='width: 75px; float: left;'>
-							<img src='http://www.ie6nomore.com/files/theme/ie6nomore-warning.jpg' alt='Warning!'/>
-						</div>
-						<div style='width: 275px; float: left; font-family: Arial, sans-serif;'>
-							<div style='font-size: 14px; font-weight: bold; margin-top: 12px;'>
-								あなたは旧式ブラウザをご利用中です
-							</div>
-							<div style='font-size: 12px; margin-top: 6px; line-height: 12px;'>
-								このウェブサイトを快適に閲覧するにはブラウザをアップグレードしてください。
-							</div>
-						</div>
-						<div style='width: 75px; float: left;'>
-							<a href='http://www.mozilla.jp' target='_blank'>
-								<img src='http://www.ie6nomore.com/files/theme/ie6nomore-firefox.jpg' style='border: none;' alt='Get Firefox 3.5'/>
-							</a>
-						</div>
-						<div style='width: 75px; float: left;'>
-							<a href='http://www.microsoft.com/downloads/details.aspx?FamilyID=341c2ad5-8c3d-4347-8c03-08cdecd8852b&DisplayLang=ja' target='_blank'>
-								<img src='http://www.ie6nomore.com/files/theme/ie6nomore-ie8.jpg' style='border: none;' alt='Get Internet Explorer 8'/>
-							</a>
-						</div>
-						<div style='width: 73px; float: left;'>
-							<a href='http://www.apple.com/jp/safari/download/' target='_blank'>
-								<img src='http://www.ie6nomore.com/files/theme/ie6nomore-safari.jpg' style='border: none;' alt='Get Safari 4'/>
-							</a>
-						</div>
-						<div style='float: left;'>
-							<a href='http://www.google.com/chrome?hl=ja' target='_blank'>
-								<img src='http://www.ie6nomore.com/files/theme/ie6nomore-chrome.jpg' style='border: none;' alt='Get Google Chrome'/>
-							</a>
-						</div>
-					</div>
-				</div>  
-			<![endif]-->
-
-			<a href="http://qa-dev.w3.org/wmvs/HEAD/check?uri=http://cumoos.ktkr.net/">
-				<img style="width:88px;" src="images/valid-html5.png" alt="正当なHTMLです!" />
-			</a>
-			<a href="http://jigsaw.w3.org/css-validator/validator?uri=http://cumoos.ktkr.net/basic.css&amp;profile=css3">
-				<img style="width:88px;" src="http://jigsaw.w3.org/css-validator/images/vcss-blue" alt="正当なCSSです!" />
-			</a>
-			<br />
-
-			Copylight &copy; 2009 - 2010 <strong>ケーボ</strong> All Rights Reserved.<br />
-			Designed by <a href="http://www.free-css-templates.com/">Free CSS Templates</a>, Thanks to <a href="http://www.legalhelpers.com/chapter-13-bankruptcy/chapter13.html">Chapter 13 Bankruptcy</a>
-		</div>
-
-
-	</body>
+	</div>
+</body>
 </html>
