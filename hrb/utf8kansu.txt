@@ -1,0 +1,72 @@
+void putfonts8_asc(char *vram, int xsize, int x, int y, char c, unsigned char *s)
+{
+	/* 中略 */
+	unsigned int u8code;
+
+	if (task->langmode == 0) {
+		/* 中略 */
+	}
+	if (task->langmode == 1) {
+		/* 中略 */
+	}
+	if (task->langmode == 2) {
+		/* 中略 */
+	}
+	if (task->langmode == 3) {    // langmodeは順番的に3番ということにしておきました。
+		for (; *s != 0; s++) {
+			if (task->langbyte1 == 0) {
+				if (((0xe2 <= *s && *s <= 0xef) || (0xc2 <= *s && *s <= 0xd1)) && 0x80 <= *(s + 1) && *(s + 1) <= 0xbf) {
+					task->langbyte1 = ((*s << 8) | *(s + 1));
+					s++;
+				} else {	// 半角1バイト文字
+					putfont8(vram, xsize, x, y, c, nihongo + *s * 16);
+				}
+				if (task->langbyte1 == 0xefbd || task->langbyte1 == 0xefbe) {	// 半角カタカナ
+					s++;
+					if (task->langbyte1 == 0xefbd) {	// ｡~ｿ
+						putfont8(vram, xsize, x, y, c, nihongo + *s * 16);
+					} else { 					// ﾀ~ﾟ
+						putfont8(vram, xsize, x, y, c, nihongo + (*s + 0x40) * 16);
+					}
+					task->langbyte1 = 0;
+				} else if (task->langbyte1 == 0xe280 && *(s + 1) == 0xbe) {	// 波ダッシュ(~)
+					s++;
+					putfont8(vram, xsize, x, y, c, nihongo + 0x7e * 16);
+					task->langbyte1 = 0;
+				} else if (task->langbyte1 == 0xc2a5) {	// 円マーク(\)
+					putfont8(vram, xsize, x, y, c, nihongo + 0x5c * 16);
+					task->langbyte1 = 0;
+				}
+			} else {
+				if (task->langbyte1 >> 12 != 0xc && task->langbyte1 >> 12 != 0xc) {
+					u8code = ((task->langbyte1 << 8) | *s);
+				} else {
+					u8code = task->langbyte1;
+					s--;
+				}
+				task->langbyte1 = 0;
+				font = nihongo + 256 * 16 + UTF82kt(u8code) * 32;
+				putfont8(vram, xsize, x - 8, y, c, font);
+				putfont8(vram, xsize, x, y, c, font + 16);
+			}
+			x += 8;
+		}
+	}
+	return;
+}
+
+unsigned int UTF82kt(unsigned int u8code) {
+	/* この位置に手順１の配列変数がくる(7980行もあるので省略) */
+	unsigned int k, t;
+
+	for (k = 0; k < 84; k++) {
+		for (t = 0; t < 94; t++) {
+			if (kt2uni[k * 94 + t] == u8code) {    // kt2uniは、手順１の配列変数名です。ちがった場合は変えてください。
+				// 配列変数の中身とu8codeがおなじだった
+				return k * 94 + t;
+			}
+		}
+	}
+
+	return 0;    // 失敗
+}
